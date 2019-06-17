@@ -1,5 +1,4 @@
 package zipping.co;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,8 +10,9 @@ public class ZipFile {
 	
 	public static String sourceFile=ConfigurationUtility.getProperty("filePath");
 	public static String outputFile = ConfigurationUtility.getProperty("zipOutputPath");
-    public static void main(String[] args) throws IOException {  	
-        try {
+	
+        public static void main(String[] args) throws IOException {  	
+		try {
 			FileOutputStream fos = new FileOutputStream(outputFile);
 			ZipOutputStream zipOut = new ZipOutputStream(fos);
 			File fileToZip = new File(sourceFile);
@@ -27,10 +27,10 @@ public class ZipFile {
 			zipOut.close();
 			fis.close();
 			fos.close();
-		} catch (Exception e) {
+		 } catch (Exception e) {
 			System.out.println("Something went wrong while converting file!");
 			e.printStackTrace();
-		}
-        System.out.println("File was successfully converted!");
+	}
+	System.out.println("File was successfully converted!");
     }
 }
